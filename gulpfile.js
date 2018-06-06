@@ -9,6 +9,7 @@ var rename = require("gulp-rename");
 gulp.task('sass', function () {
     gulp.src('./src/assets/stylesheet/scss/**/*.scss')
         .pipe(sass())
+        .on('error', console.error.bind(console))
         .pipe(gulp.dest('./src/assets/stylesheet/css/'))
 });
 
