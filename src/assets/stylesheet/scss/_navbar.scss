@@ -1,0 +1,41 @@
+.ts-navbar {
+    height: $header-height;
+    background-color: $blue-light;
+}
+
+.ts-navbar-item {
+    padding-top: 23px;
+    position: relative;
+
+    > .title {
+        font-family: 'Roboto Medium', sans-serif;
+        height: 28px;
+        text-align: center;
+        font-size: $title-font-size;
+        color: $blue-dark;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active {
+
+        > .title {
+            color: $white;
+        }
+
+        &:after {
+            content: '';
+            height: 5px;
+            background-color: $blue-dark;
+            width: 160px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+        }
+    }
+
+}
