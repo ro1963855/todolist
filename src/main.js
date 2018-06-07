@@ -7,11 +7,14 @@ import regular from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 import App from './App';
 import router from './router';
 import './assets/stylesheet/build/all.css';
 
 Vue.use(BootstrapVue);
+Vue.use(VueAxios, axios);
 
 fontawesome.library.add(solid);
 fontawesome.library.add(regular);
