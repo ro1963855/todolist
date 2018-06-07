@@ -1,9 +1,51 @@
+.ts-action-btn:hover,.ts-addInput:hover,.ts-icon-pencil:hover,.ts-icon-star:hover,.ts-navbar-item:hover,.ts-upload-icon:hover{cursor:pointer}
 .ts-navbar{height:76px;background-color:#4A90E2}
 .ts-navbar-item{padding-top:23px;position:relative}
 .ts-navbar-item>.title{font-family:'Roboto Medium',sans-serif;height:28px;text-align:center;font-size:24px;color:#00408B}
-.ts-navbar-item:hover{cursor:pointer}
 .ts-navbar-item.active>.title{color:#fff}
 .ts-navbar-item.active:after{content:'';height:5px;background-color:#00408B;width:160px;position:absolute;left:0;right:0;bottom:0;margin:0 auto}
+.ts-taskList{height:2000px;background-color:#E1E1E1;padding-top:24px}
+.ts-addInput,.ts-card .ts-descriptionTitle{display:flex;align-items:center;height:76px}
+.ts-addInput{border:2px solid #C8C8C8;border-radius:5px;margin-bottom:24px;background-color:#fff}
+.ts-addInput .ts-content{margin-left:33px;font-family:'Roboto Regular',sans-serif;font-size:24px;color:#C8C8C8}
+.ts-card .ts-descrption-input,.ts-edit-description{font-family:'Roboto Medium',sans-serif}
+.ts-card{background-color:#F2F2F2;border-radius:5px 5px 0 0;margin-bottom:8px}
+.ts-card .ts-description{margin-left:0;margin-right:0}
+.ts-card .ts-descriptionTitle.important{background-color:#FFF2DC}
+.ts-card .ts-descrption-input{margin-right:32px;background-color:transparent;border:0;font-size:24px;color:#000}
+.ts-card .ts-descrption-input.ts-task-complete{text-decoration:line-through;color:#9B9B9B}
+.ts-card .ts-edit{border-top:2px solid #C8C8C8}
+.ts-card .ts-ckbox{margin-left:32px}
+.ts-card .ts-ckbox>.custom-control-label::before{background:#fff;height:24px;width:24px;border-radius:2px;top:0}
+.ts-card .ts-ckbox>.custom-control-label::after{height:24px;width:24px;border-radius:2px;top:0}
+.ts-icon{padding-right:32px}
+.ts-icon-pencil,.ts-icon-star{color:#000;font-size:24px}
+.ts-icon-star.active{color:#F5A623}
+.ts-icon-pencil.active{color:#4A90E2}
+.ts-edit-section{margin-top:24px}
+.ts-edit-title{margin-left:72px}
+.ts-edit-icon{font-size:17px}
+.ts-edit-description{font-weight:600;font-size:20px;color:#000;margin-left:4px}
+.ts-action-btn .ts-action-content,.ts-comment-textarea,.ts-deadline-input,.ts-upload-info span{font-family:'Roboto Regular',sans-serif}
+.ts-deadline-input{width:162px;height:35px;border-radius:2px;margin-right:8px;color:#000}
+.ts-deadline-input::placeholder{color:#C8C8C8}
+.ts-edit-editor{margin-top:8px;margin-left:96px}
+.ts-upload-info{margin-right:23px}
+.ts-upload-info span{font-size:16px;display:block}
+.ts-upload-info .ts-upload-name{color:#000}
+.ts-upload-info .ts-upload-time{color:#757575}
+.ts-upload-icon{font-size:32px;color:#C8C8C8}
+.ts-upload-icon:hover{color:#4A90E2}
+.ts-comment-textarea{margin-right:78px;height:120px;font-size:16px;color:#000;line-height:24px}
+.ts-comment-textarea::placeholder{color:#C8C8C8}
+.ts-action-section{margin-top:24px;height:60px}
+.ts-action-btn{width:50%;display:flex;align-items:center;justify-content:center}
+.ts-action-btn.lft{background-color:#fff;color:#D0021B}
+.ts-action-btn.lft:hover{background-color:#FDFDFD}
+.ts-action-btn.rgt{background-color:#4A90E2;color:#fff}
+.ts-action-btn.rgt:hover{background-color:#3982D7}
+.ts-action-btn .ts-action-content{font-size:24px}
+.ts-action-btn .ts-action-icon{font-size:20px}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2) format("woff2");unicode-range:U+1F00-1FFF}

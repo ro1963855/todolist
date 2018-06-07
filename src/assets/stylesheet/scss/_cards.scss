@@ -1,0 +1,232 @@
+.ts-taskList {
+    height: 2000px;
+    background-color: $gray-body-bg;
+    padding-top: 24px;
+}
+
+.ts-addInput {
+    height: 76px;
+    border: 2px solid $gray-placeholder;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    background-color: $white;
+    .ts-content {
+        margin-left: 33px;
+        font-family: 'Roboto Regular', sans-serif;
+        font-size: $title-font-size;
+        color: $gray-placeholder;
+    }
+
+}
+
+.ts-card {
+    background-color: $gray-card-bg;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 8px;
+    .ts-description {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .ts-descriptionTitle {
+        display: flex;
+        align-items: center;
+        height: 76px;
+        &.important {
+            background-color: $yellow-important;
+        }
+
+    }
+
+    .ts-descrption-input {
+        margin-right: 32px;
+        background-color: transparent;
+        border: 0;
+        font-family: 'Roboto Medium', sans-serif;
+        font-size: $title-font-size;
+        color: $black;
+        &.ts-task-complete {
+            text-decoration: line-through;
+            color: $gray-lineThrough;
+        }
+
+    }
+
+    .ts-edit {
+        border-top: 2px solid $gray-placeholder;
+    }
+
+    .ts-ckbox {
+        margin-left: 32px;
+        > .custom-control-label::before {
+            background: $white;
+            height: 24px;
+            width: 24px;
+            border-radius: 2px;
+            top: 0;
+        }
+
+        > .custom-control-label::after {
+            height: 24px;
+            width: 24px;
+            border-radius: 2px;
+            top: 0;
+        }
+
+    }
+
+}
+
+.ts-icon {
+    padding-right: 32px;
+}
+
+.ts-icon-star,
+.ts-icon-pencil {
+    color: $black;
+    font-size: 24px;
+}
+
+.ts-icon-star {
+    &.active {
+        color: $yellow-star;
+    }
+
+}
+
+.ts-icon-pencil {
+    &.active {
+        color: $blue-light;
+    }
+
+}
+
+.ts-edit-section {
+    margin-top: 24px;
+}
+
+.ts-edit-title {
+    margin-left: 72px;
+}
+
+.ts-edit-icon {
+    font-size: 17px;
+}
+
+.ts-edit-description {
+    font-family: 'Roboto Medium', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: $black;
+    margin-left: 4px;
+}
+
+.ts-deadline-input {
+    width: 162px;
+    height: 35px;
+    font-family: 'Roboto Regular', sans-serif;
+    border-radius: 2px;
+    margin-right: 8px;
+    color: $black;
+    &::placeholder {
+        color: $gray-placeholder;
+    }
+
+}
+
+.ts-edit-editor {
+    margin-top: 8px;
+    margin-left: 96px;
+}
+
+.ts-upload-info {
+    margin-right: 23px;
+    span {
+        font-size: 16px;
+        display: block;
+        font-family: 'Roboto Regular', sans-serif;
+    }
+
+    .ts-upload-name {
+        color: $black;
+    }
+
+    .ts-upload-time {
+        color: $gray-comment;
+    }
+
+}
+
+.ts-upload-icon {
+    font-size: 32px;
+    color: $gray-placeholder;
+    &:hover {
+        color: $blue-light;
+    }
+
+}
+
+.ts-comment-textarea {
+    margin-right: 78px;
+    height: 120px;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 16px;
+    color: $black;
+    line-height: 24px;
+    &::placeholder {
+        color: $gray-placeholder;
+    }
+
+}
+
+.ts-action-section {
+    margin-top: 24px;
+    height: 60px;
+}
+
+.ts-action-btn {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.lft {
+        background-color: $white;
+        color: $red;
+        &:hover {
+            background-color: $white-btn-bg;
+        }
+
+    }
+
+    &.rgt {
+        background-color: $blue-light;
+        color: $white;
+        &:hover {
+            background-color: $blue-btn-bg;
+        }
+
+    }
+
+    .ts-action-content {
+        font-family: 'Roboto Regular', sans-serif;
+        font-size: 24px;
+    }
+
+    .ts-action-icon {
+        font-size: 20px;
+    }
+
+}
+
+.ts-icon-star,
+.ts-icon-pencil,
+.ts-action-btn,
+.ts-addInput,
+.ts-upload-icon {
+    &:hover {
+        cursor: pointer;
+    }
+
+}
