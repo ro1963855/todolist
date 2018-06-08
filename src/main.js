@@ -7,6 +7,7 @@ import regular from '@fortawesome/fontawesome-free-regular';
 import fontawesome from '@fortawesome/fontawesome';
 import datePicker from 'vue-bootstrap-datetimepicker';
 import jQuery from 'jquery';
+import VueLodash from 'vue-lodash';
 import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -23,6 +24,7 @@ import './assets/stylesheet/build/all.css';
 Vue.use(BootstrapVue);
 Vue.use(VueAxios, axios);
 Vue.use(datePicker);
+Vue.use(VueLodash);
 
 fontawesome.library.add(solid);
 fontawesome.library.add(regular);

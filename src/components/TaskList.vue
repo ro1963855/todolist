@@ -7,6 +7,7 @@
       <div v-for="task in tasks" v-bind:key="task.id">
         <ToDoList
           :task="task"
+          @updateData="getTasksData"
         >
         </ToDoList>
       </div>
@@ -30,11 +31,16 @@ export default {
     };
   },
   created() {
-    const vm = this;
-    const api = 'http://localhost:3000/tasks';
-    vm.$http.get(api).then((response) => {
-      this.tasks = response.data;
-    });
+    this.getTasksData();
+  },
+  methods: {
+    getTasksData() {
+      const vm = this;
+      const api = 'http://localhost:3000/tasks';
+      vm.$http.get(api).then((response) => {
+        this.tasks = response.data;
+      });
+    },
   },
 };
 </script>
