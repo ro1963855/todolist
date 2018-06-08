@@ -29,14 +29,20 @@
           <span class="ts-edit-description">Deadline</span>
         </div>
         <div class="ts-edit-editor row">
-          <b-form-input v-model="task.deadline.date"
-                    type="text"
-                    class="ts-deadline-input"
-                    placeholder="yyyy/mm/dd"></b-form-input>
-          <b-form-input v-model="task.deadline.time"
-                    type="text"
-                    class="ts-deadline-input"
-                    placeholder="hh:mm"></b-form-input>
+          <div class="row">
+            <div class="col-md-12">
+              <date-picker class="ts-deadline-input"
+                            v-model="task.deadline.date"
+                            :config="dataPicker.dateOptions"></date-picker>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <date-picker class="ts-deadline-input"
+                            v-model="task.deadline.time"
+                            :config="dataPicker.timeOptions"></date-picker>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ts-edit-section">
@@ -84,12 +90,29 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
+import datePicker from 'vue-bootstrap-datetimepicker';
 
 export default {
   name: 'app',
   props: ['task'],
   components: {
     FontAwesomeIcon,
+    datePicker,
+  },
+  data() {
+    return {
+      date: new Date(),
+      dataPicker: {
+        dateOptions: {
+          format: 'YYYY/MM/DD',
+          useCurrent: false,
+        },
+        timeOptions: {
+          format: 'HH:mm',
+          useCurrent: false,
+        },
+      },
+    };
   },
 };
 </script>
