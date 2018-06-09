@@ -6,7 +6,7 @@
                       class="col ts-navbar-item h-100"
                       v-bind:key="index"
                       :class="{active: stageSelected === key}"
-                      @click="stageSelected = key">
+                      @click="updateStage(key)">
                     <div class="title">{{stage.title}}</div>
                 </div>
             </div>
@@ -32,8 +32,21 @@ export default {
           title: 'Completed',
         },
       ],
-
     };
+  },
+  methods: {
+    updateStage(index) {
+      this.stageSelected = index;
+      this.$eventHub.$emit('update-stage', this.stages[this.stageSelected].title);
+    },
+    getStageTitleListener() {
+      this.$eventHub.$on('get-stage', () => {
+        this.$eventHub.$emit('update-stage', this.stages[this.stageSelected].title);
+      });
+    },
+  },
+  created() {
+    this.getStageTitleListener();
   },
 };
 </script>

@@ -49,6 +49,8 @@
   background-color: #F2F2F2;
   border-radius: 5px 5px 0 0;
   margin-bottom: 8px; }
+  .ts-card .ts-card-header.important {
+    background-color: #FFF2DC; }
   .ts-card .ts-description {
     margin-left: 0;
     margin-right: 0; }
@@ -56,8 +58,6 @@
     display: flex;
     align-items: center;
     height: 76px; }
-    .ts-card .ts-descriptionTitle.important {
-      background-color: #FFF2DC; }
   .ts-card .ts-descrption-input {
     margin-right: 32px;
     background-color: transparent;
@@ -186,6 +186,19 @@
 .ts-addInput:hover,
 .ts-upload-icon:hover {
   cursor: pointer; }
+
+.ts-simpleContent {
+  margin: 0 0 17px 72px; }
+  .ts-simpleContent .ts-simpleContent-icon {
+    font-size: 18px; }
+  .ts-simpleContent .ts-simpleContent-deadlineDate {
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 16px; }
+  .ts-simpleContent .ts-simpleContent-body {
+    margin-right: 16px;
+    color: #757575; }
+  .ts-simpleContent .ts-simpleContent-calendar {
+    margin-right: 8px; }
 
 /* cyrillic-ext */
 @font-face {

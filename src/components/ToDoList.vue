@@ -1,26 +1,44 @@
 <template id="app">
   <div class="ts-card">
-    <div class="ts-description row">
-      <div class="ts-descriptionTitle w-100" :class="{important: taskTemplate.isImportant}">
-        <b-form-checkbox class="ts-ckbox"
-                          v-model="task.isComplete"
-                          @input="updateComplete"></b-form-checkbox>
-        <b-form-input v-model="taskTemplate.description"
-                      type="text"
-                      class="ts-descrption-input"
-                      :class="{'ts-task-complete': task.isComplete}"
-                      placeholder="Type Something Here…"></b-form-input>
-        <div class="ts-icon" style="margin-left:auto;">
-          <font-awesome-icon :icon="['fas', 'star']"
-                              class="ts-icon-star"
-                              :class="{active: taskTemplate.isImportant}"
-                              @click="updateStar"/>
+    <div class="ts-card-header" :class="{important: taskTemplate.isImportant}">
+      <div class="ts-description row">
+        <div class="ts-descriptionTitle w-100">
+          <b-form-checkbox class="ts-ckbox"
+                            v-model="task.isComplete"
+                            @input="updateComplete"></b-form-checkbox>
+          <b-form-input v-model="task.description"
+                        type="text"
+                        class="ts-descrption-input"
+                        :class="{'ts-task-complete': task.isComplete}"
+                        @change="saveTitle"
+                        placeholder="Type Something Here…"></b-form-input>
+          <div class="ts-icon" style="margin-left:auto;">
+            <font-awesome-icon :icon="['fas', 'star']"
+                                class="ts-icon-star"
+                                :class="{active: taskTemplate.isImportant}"
+                                @click="updateStar"/>
+          </div>
+          <div class="ts-icon">
+            <font-awesome-icon :icon="['fas', 'pencil-alt']"
+                                class="ts-icon-pencil"
+                                :class="{active: isEdit}"
+                                @click="cancelTask"/>
+          </div>
         </div>
-        <div class="ts-icon">
-          <font-awesome-icon :icon="['fas', 'pencil-alt']"
-                              class="ts-icon-pencil"
-                              :class="{active: isEdit}"
-                              @click="cancelTask"/>
+        <div class="ts-simpleContent w-100 row"
+              :class="{important: taskTemplate.isImportant}"
+              v-if="isShowSimpleContent">
+          <div class="ts-simpleContent-body" v-if="task.deadline.date != ''">
+            <font-awesome-icon :icon="['far', 'calendar-alt']"
+                                class="ts-simpleContent-icon ts-simpleContent-calendar"/>
+            <span class="ts-simpleContent-deadlineDate">{{task.deadline.date}}</span>
+          </div>
+          <div class="ts-simpleContent-body" v-if="task.file.name != ''">
+            <font-awesome-icon :icon="['far', 'file']" class="ts-simpleContent-icon"/>
+          </div>
+          <div class="ts-simpleContent-body" v-if="task.comment != ''">
+            <font-awesome-icon :icon="['far', 'comment-dots']" class="ts-simpleContent-icon"/>
+          </div>
         </div>
       </div>
     </div>
@@ -106,7 +124,7 @@ export default {
   data() {
     return {
       taskTemplate: {},
-      isEdit: true,
+      isEdit: false,
       dataPicker: {
         dateOptions: {
           format: 'YYYY/MM/DD',
@@ -136,6 +154,9 @@ export default {
         vm.isEdit = false;
       });
     },
+    saveTitle() {
+      this.updateTask(this.task);
+    },
     updateComplete() {
       this.taskTemplate.isComplete = this.task.isComplete;
       this.updateTask(this.task);
@@ -158,6 +179,13 @@ export default {
       }
 
       this.isEdit = !this.isEdit;
+    },
+  },
+  computed: {
+    isShowSimpleContent() {
+      return (this.task.deadline.date !== '') ||
+              (this.task.file.name !== '') ||
+              (this.task.comment !== '');
     },
   },
   created() {

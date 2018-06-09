@@ -10,8 +10,8 @@
 .ts-addInput .ts-content{margin-left:33px;font-family:'Roboto Regular',sans-serif;font-size:24px;color:#C8C8C8}
 .ts-card .ts-descrption-input,.ts-edit-description{font-family:'Roboto Medium',sans-serif}
 .ts-card{background-color:#F2F2F2;border-radius:5px 5px 0 0;margin-bottom:8px}
+.ts-card .ts-card-header.important{background-color:#FFF2DC}
 .ts-card .ts-description{margin-left:0;margin-right:0}
-.ts-card .ts-descriptionTitle.important{background-color:#FFF2DC}
 .ts-card .ts-descrption-input{margin-right:32px;background-color:transparent;border:0;font-size:24px;color:#000}
 .ts-card .ts-descrption-input.ts-task-complete{text-decoration:line-through;color:#9B9B9B}
 .ts-card .ts-edit{border-top:2px solid #C8C8C8}
@@ -26,7 +26,7 @@
 .ts-edit-title{margin-left:72px}
 .ts-edit-icon{font-size:17px}
 .ts-edit-description{font-weight:600;font-size:20px;color:#000;margin-left:4px}
-.ts-action-btn .ts-action-content,.ts-comment-textarea,.ts-deadline-input,.ts-upload-info span{font-family:'Roboto Regular',sans-serif}
+.ts-action-btn .ts-action-content,.ts-comment-textarea,.ts-deadline-input,.ts-simpleContent .ts-simpleContent-deadlineDate,.ts-upload-info span{font-family:'Roboto Regular',sans-serif}
 .ts-deadline-input{width:162px;height:35px;border-radius:2px;margin-right:8px;color:#000}
 .ts-deadline-input::placeholder{color:#C8C8C8}
 .ts-edit-editor{margin-top:8px;margin-left:96px}
@@ -46,6 +46,11 @@
 .ts-action-btn.rgt:hover{background-color:#3982D7}
 .ts-action-btn .ts-action-content{font-size:24px}
 .ts-action-btn .ts-action-icon{font-size:20px}
+.ts-simpleContent{margin:0 0 17px 72px}
+.ts-simpleContent .ts-simpleContent-icon{font-size:18px}
+.ts-simpleContent .ts-simpleContent-deadlineDate{font-size:16px}
+.ts-simpleContent .ts-simpleContent-body{margin-right:16px;color:#757575}
+.ts-simpleContent .ts-simpleContent-calendar{margin-right:8px}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:Roboto;font-style:italic;font-weight:400;src:local("Roboto Italic"),local("Roboto-Italic"),url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2) format("woff2");unicode-range:U+1F00-1FFF}

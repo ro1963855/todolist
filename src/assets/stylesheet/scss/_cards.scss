@@ -25,6 +25,10 @@
     background-color: $gray-card-bg;
     border-radius: 5px 5px 0 0;
     margin-bottom: 8px;
+    .ts-card-header.important {
+        background-color: $yellow-important;
+    }
+
     .ts-description {
         margin-left: 0;
         margin-right: 0;
@@ -34,10 +38,6 @@
         display: flex;
         align-items: center;
         height: 76px;
-        &.important {
-            background-color: $yellow-important;
-        }
-
     }
 
     .ts-descrption-input {
@@ -229,4 +229,26 @@
         cursor: pointer;
     }
 
+}
+
+.ts-simpleContent {
+    margin: 0 0 17px 72px;
+    .ts-simpleContent-icon {
+        font-size: 18px;
+    }
+    
+    .ts-simpleContent-deadlineDate {
+        font-family: 'Roboto Regular', sans-serif;
+        font-size: 16px;
+    }
+
+    .ts-simpleContent-body {
+        margin-right: 16px;
+        color: $gray-comment;
+    }
+
+    .ts-simpleContent-calendar {
+        margin-right: 8px;
+    }
+    
 }
