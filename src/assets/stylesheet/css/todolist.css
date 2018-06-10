@@ -27,7 +27,7 @@
     margin: 0 auto; }
 
 .ts-taskList {
-  height: 2000px;
+  min-height: calc(100vh - 76px);
   background-color: #E1E1E1;
   padding-top: 24px; }
 
@@ -49,11 +49,21 @@
   background-color: #F2F2F2;
   border-radius: 5px 5px 0 0;
   margin-bottom: 8px; }
+  .ts-card .handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: #757575;
+    cursor: move;
+    opacity: 0; }
+  .ts-card:hover .handle {
+    opacity: 1; }
   .ts-card .ts-card-header.important {
     background-color: #FFF2DC; }
   .ts-card .ts-description {
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    position: relative; }
   .ts-card .ts-descriptionTitle {
     display: flex;
     align-items: center;
@@ -367,3 +377,9 @@
   font-weight: 500;
   src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+.taskCount {
+  font-family: 'Roboto-Itali', sans-serif;
+  font-size: 24px;
+  color: #C8C8C8;
+  font-style: italic; }

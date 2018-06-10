@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="mainly">
     <Navbar/>
     <router-view/>
   </div>
@@ -9,9 +9,19 @@
 import Navbar from '@/components/Navbar';
 
 export default {
-  name: 'app',
+  name: 'mainly',
   components: {
     Navbar,
   },
 };
 </script>
+
+<style>
+  html,
+  body,
+  #mainly {
+    min-height: 100vh;
+  }
+
+</style>
+

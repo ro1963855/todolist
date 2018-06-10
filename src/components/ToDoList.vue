@@ -2,6 +2,9 @@
   <div class="ts-card">
     <div class="ts-card-header" :class="{important: taskTemplate.isImportant}">
       <div class="ts-description row">
+        <div class="handle" v-if="stageSelectedTitle == 'My Tasks'">
+          <font-awesome-icon :icon="['fas', 'ellipsis-v']"/>
+        </div>
         <div class="ts-descriptionTitle w-100">
           <b-form-checkbox class="ts-ckbox"
                             v-model="task.isComplete"
@@ -31,7 +34,9 @@
           <div class="ts-simpleContent-body" v-if="task.deadline.date != ''">
             <font-awesome-icon :icon="['far', 'calendar-alt']"
                                 class="ts-simpleContent-icon ts-simpleContent-calendar"/>
-            <span class="ts-simpleContent-deadlineDate">{{task.deadline.date}}</span>
+            <span class="ts-simpleContent-deadlineDate">
+              {{getReminderDate(task.deadline.date)}}
+            </span>
           </div>
           <div class="ts-simpleContent-body" v-if="task.file.name != ''">
             <font-awesome-icon :icon="['far', 'file']" class="ts-simpleContent-icon"/>
@@ -53,6 +58,7 @@
             <div class="col-md-12">
               <date-picker class="ts-deadline-input"
                             v-model="taskTemplate.deadline.date"
+                            placeholder="yyyy/mm/dd"
                             :config="dataPicker.dateOptions"></date-picker>
             </div>
           </div>
@@ -60,6 +66,7 @@
             <div class="col-md-12">
               <date-picker class="ts-deadline-input"
                             v-model="taskTemplate.deadline.time"
+                            placeholder="hh:mm"
                             :config="dataPicker.timeOptions"></date-picker>
             </div>
           </div>
@@ -116,7 +123,7 @@ import moment from 'moment';
 
 export default {
   name: 'app',
-  props: ['task'],
+  props: ['task', 'stageSelectedTitle'],
   components: {
     FontAwesomeIcon,
     datePicker,
@@ -179,6 +186,17 @@ export default {
       }
 
       this.isEdit = !this.isEdit;
+    },
+    getReminderDate(date) {
+      const oneYearAfterToday = moment().add(1, 'years');
+      const oneYearAfterDeadline = moment(date).add(1, 'days');
+      let result;
+      if (oneYearAfterDeadline >= oneYearAfterToday) {
+        result = oneYearAfterToday.format('YYYY/MM/DD');
+      } else {
+        result = oneYearAfterToday.format('MM/DD');
+      }
+      return result;
     },
   },
   computed: {

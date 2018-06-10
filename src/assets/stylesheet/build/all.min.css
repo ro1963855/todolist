@@ -1,17 +1,19 @@
-.ts-action-btn:hover,.ts-addInput:hover,.ts-icon-pencil:hover,.ts-icon-star:hover,.ts-navbar-item:hover,.ts-upload-icon:hover{cursor:pointer}
 .ts-navbar{height:76px;background-color:#4A90E2}
 .ts-navbar-item{padding-top:23px;position:relative}
 .ts-navbar-item>.title{font-family:'Roboto Medium',sans-serif;height:28px;text-align:center;font-size:24px;color:#00408B}
+.ts-navbar-item:hover{cursor:pointer}
 .ts-navbar-item.active>.title{color:#fff}
 .ts-navbar-item.active:after{content:'';height:5px;background-color:#00408B;width:160px;position:absolute;left:0;right:0;bottom:0;margin:0 auto}
-.ts-taskList{height:2000px;background-color:#E1E1E1;padding-top:24px}
 .ts-addInput,.ts-card .ts-descriptionTitle{display:flex;align-items:center;height:76px}
+.ts-taskList{min-height:calc(100vh - 76px);background-color:#E1E1E1;padding-top:24px}
 .ts-addInput{border:2px solid #C8C8C8;border-radius:5px;margin-bottom:24px;background-color:#fff}
 .ts-addInput .ts-content{margin-left:33px;font-family:'Roboto Regular',sans-serif;font-size:24px;color:#C8C8C8}
 .ts-card .ts-descrption-input,.ts-edit-description{font-family:'Roboto Medium',sans-serif}
 .ts-card{background-color:#F2F2F2;border-radius:5px 5px 0 0;margin-bottom:8px}
+.ts-card .handle{position:absolute;top:50%;transform:translate(0,-50%);color:#757575;cursor:move;opacity:0}
+.ts-card:hover .handle{opacity:1}
 .ts-card .ts-card-header.important{background-color:#FFF2DC}
-.ts-card .ts-description{margin-left:0;margin-right:0}
+.ts-card .ts-description{margin-left:0;margin-right:0;position:relative}
 .ts-card .ts-descrption-input{margin-right:32px;background-color:transparent;border:0;font-size:24px;color:#000}
 .ts-card .ts-descrption-input.ts-task-complete{text-decoration:line-through;color:#9B9B9B}
 .ts-card .ts-edit{border-top:2px solid #C8C8C8}
@@ -46,6 +48,7 @@
 .ts-action-btn.rgt:hover{background-color:#3982D7}
 .ts-action-btn .ts-action-content{font-size:24px}
 .ts-action-btn .ts-action-icon{font-size:20px}
+.ts-action-btn:hover,.ts-addInput:hover,.ts-icon-pencil:hover,.ts-icon-star:hover,.ts-upload-icon:hover{cursor:pointer}
 .ts-simpleContent{margin:0 0 17px 72px}
 .ts-simpleContent .ts-simpleContent-icon{font-size:18px}
 .ts-simpleContent .ts-simpleContent-deadlineDate{font-size:16px}
@@ -72,3 +75,4 @@
 @font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local("Roboto Medium"),local("Roboto-Medium"),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}
 @font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local("Roboto Medium"),local("Roboto-Medium"),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:Roboto;font-style:normal;font-weight:500;src:local("Roboto Medium"),local("Roboto-Medium"),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+.taskCount{font-family:Roboto-Itali,sans-serif;font-size:24px;color:#C8C8C8;font-style:italic}

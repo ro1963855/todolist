@@ -1,5 +1,5 @@
 .ts-taskList {
-    height: 2000px;
+    min-height: calc(100vh - #{$header-height});
     background-color: $gray-body-bg;
     padding-top: 24px;
 }
@@ -25,6 +25,19 @@
     background-color: $gray-card-bg;
     border-radius: 5px 5px 0 0;
     margin-bottom: 8px;
+    .handle {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: $gray-comment;
+        cursor: move;
+        opacity: 0;
+    }
+
+    &:hover .handle {
+        opacity: 1;
+    }
+
     .ts-card-header.important {
         background-color: $yellow-important;
     }
@@ -32,6 +45,7 @@
     .ts-description {
         margin-left: 0;
         margin-right: 0;
+        position: relative;
     }
 
     .ts-descriptionTitle {
