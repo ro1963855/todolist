@@ -31,7 +31,8 @@
         <div class="ts-simpleContent w-100 row"
               :class="{important: taskTemplate.isImportant}"
               v-if="isShowSimpleContent">
-          <div class="ts-simpleContent-body" v-if="task.deadline.date != ''">
+          <div class="ts-simpleContent-body"
+                v-if="task.deadline.date != '' && task.deadline.date != null">
             <font-awesome-icon :icon="['far', 'calendar-alt']"
                                 class="ts-simpleContent-icon ts-simpleContent-calendar"/>
             <span class="ts-simpleContent-deadlineDate">
@@ -162,6 +163,7 @@ export default {
       });
     },
     saveTitle() {
+      this.taskTemplate.description = this.task.description;
       this.updateTask(this.task);
     },
     updateComplete() {
@@ -188,13 +190,14 @@ export default {
       this.isEdit = !this.isEdit;
     },
     getReminderDate(date) {
-      const oneYearAfterToday = moment().add(1, 'years');
-      const oneYearAfterDeadline = moment(date).add(1, 'days');
       let result;
-      if (oneYearAfterDeadline >= oneYearAfterToday) {
-        result = oneYearAfterToday.format('YYYY/MM/DD');
+      const deadlineDate = new Date(date);
+      const deadlineYear = moment(deadlineDate.toISOString(), 'YYYY/MM/DD').year();
+      const todayYear = moment().year();
+      if (deadlineYear !== todayYear) {
+        result = moment(date).format('YYYY/MM/DD');
       } else {
-        result = oneYearAfterToday.format('MM/DD');
+        result = moment(date).format('MM/DD');
       }
       return result;
     },
