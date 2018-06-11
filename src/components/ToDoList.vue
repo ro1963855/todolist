@@ -177,7 +177,7 @@ export default {
     },
     updateTask(task) {
       const vm = this;
-      const api = `http://localhost:3000/tasks/${task.id}`;
+      const api = `/api/tasks/${task.id}`;
       return vm.$http.put(api, task).then(() => {
         vm.$emit('updateData');
       });

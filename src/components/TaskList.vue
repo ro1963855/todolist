@@ -46,8 +46,8 @@ export default {
   methods: {
     getTasksData() {
       const vm = this;
-      const dataApi = 'http://localhost:3000/tasks';
-      const orderApi = 'http://localhost:3000/order';
+      const dataApi = '/api/tasks';
+      const orderApi = '/api/order';
       let templateTask = {};
       vm.$http.get(dataApi).then((response) => {
         vm.completeTasks = response.data;
@@ -94,7 +94,7 @@ export default {
     updateOrder() {
       const sort = this.tasks.map(task => task.id);
       const vm = this;
-      const api = 'http://localhost:3000/order';
+      const api = '/api/order';
       this.sort = sort;
       vm.$http.post(api, { id: 1, sort });
       this.completeTasks = this.tasks;

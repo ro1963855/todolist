@@ -155,8 +155,8 @@ export default {
     },
     saveEdit() {
       const vm = this;
-      const dataApi = 'http://localhost:3000/tasks';
-      const orderApi = 'http://localhost:3000/order';
+      const dataApi = '/api/tasks';
+      const orderApi = '/api/order';
       let newId = 0;
       let sort = [];
       vm.$http.post(dataApi, vm.taskTemplate).then((response) => {
