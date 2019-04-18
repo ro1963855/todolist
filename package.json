@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "npm-run-all --parallel dev server",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "server": "json-server --watch json-server/data.json -p 3001 -d 2000",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -28,6 +30,8 @@
     "jquery": "^3.3.1",
     "json-server": "^0.13.0",
     "moment": "^2.22.2",
+    "npm-run-all": "^4.1.5",
+    "npm-run-parallel": "^0.6.0",
     "pc-bootstrap4-datetimepicker": "^4.17.50",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.1",
